@@ -1,5 +1,7 @@
 let fetch = require('node-fetch')
 
+let port = process.env.PORT || 3000;
+
 fetch('https://api.github.com/users/github')
     .then(function(res) {
       return res.json()
@@ -23,6 +25,6 @@ app.get('/puzzles', function (req, res) {
   res.send('Hello World!');
 });
 
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log('Example app listening on port 3000!');
 });
