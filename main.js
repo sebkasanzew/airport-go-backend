@@ -139,7 +139,7 @@ app.get('/service-titles', (req, res) => {
 
 app.get('/puzzles/public-area', (req, res) => {
   const data = {
-    'public-area': [
+    'publicArea': [
       {
         type: 'find'
       },
@@ -158,7 +158,7 @@ app.get('/puzzles/public-area', (req, res) => {
 
 app.get('/puzzles/passenger-zone', (req, res) => {
   const data = {
-    'passenger-zone': [
+    'passengerZone': [
       {
         type: 'question',
         description: ''
@@ -180,7 +180,7 @@ app.get('/puzzles/passenger-zone', (req, res) => {
 
 app.get('/puzzles/security-check', (req, res) => {
   const data = {
-    'security-check': [
+    'securityCheck': [
       {
         type: 'find'
       },
