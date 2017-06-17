@@ -153,7 +153,7 @@ app.get('/puzzles/public-area', (req, res) => {
   }
 
   res.setHeader('Content-Type', 'application/json')
-  res.send(JSON.stringify(data, null, 3))
+  res.send(JSON.stringify(data))
 })
 
 app.get('/puzzles/passenger-zone', (req, res) => {
@@ -175,7 +175,7 @@ app.get('/puzzles/passenger-zone', (req, res) => {
   }
 
   res.setHeader('Content-Type', 'application/json')
-  res.send(JSON.stringify(data, null, 3))
+  res.send(JSON.stringify(data))
 })
 
 app.get('/puzzles/security-check', (req, res) => {
@@ -194,7 +194,7 @@ app.get('/puzzles/security-check', (req, res) => {
   }
 
   res.setHeader('Content-Type', 'application/json')
-  res.send(JSON.stringify(data, null, 3))
+  res.send(JSON.stringify(data))
 })
 
 app.listen(port, () => {
