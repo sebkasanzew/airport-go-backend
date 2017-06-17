@@ -24,7 +24,9 @@ let munichServices = (callback) => {
   }).then(json => {
     res.setHeader('Content-Type', 'application/json')
     res.send(JSON.stringify(json, null, 3))
-  })
+  }).catch((error) => {
+    console.log('Promise error', error);
+  });
 }
 
 app.get('/services', function(req, res) {
@@ -38,7 +40,9 @@ app.get('/services', function(req, res) {
   }).then(json => {
     res.setHeader('Content-Type', 'application/json')
     res.send(JSON.stringify(json, null, 3))
-  })
+  }).catch((error) => {
+    console.log('Promise error', error);
+  });
 })
 
 app.get('/airport', (req, res) => {
@@ -50,7 +54,9 @@ app.get('/airport', (req, res) => {
   }).then(json => {
     res.setHeader('Content-Type', 'application/json')
     res.send(JSON.stringify(json, null, 3))
-  })
+  }).catch((error) => {
+    console.log('Promise error', error);
+  });
 })
 
 app.get('/flight', (req, res) => {
@@ -62,19 +68,23 @@ app.get('/flight', (req, res) => {
   }).then(json => {
     res.setHeader('Content-Type', 'application/json')
     res.send(JSON.stringify(json, null, 3))
-  })
+  }).catch((error) => {
+    console.log('Promise error', error);
+  });
 })
 
 app.get('/airline', (req, res) => {
   fetch(
-      `https://api-dev.munich-airport.de/aci-airline-v1/search/${airport}?${queryParam}`,
+      `https://api-dev.munich-airport.de/aci-airline-v1/search/${airport}`,
       {method: 'GET', headers}
   ).then(res => {
     return res.json()
   }).then(json => {
     res.setHeader('Content-Type', 'application/json')
     res.send(JSON.stringify(json, null, 3))
-  })
+  }).catch((error) => {
+    console.log('Promise error', error);
+  });
 })
 
 app.get('/service-titles', (req, res) => {
@@ -89,7 +99,9 @@ app.get('/service-titles', (req, res) => {
     json = _.map(json.services, 'title')
     res.setHeader('Content-Type', 'application/json')
     res.send(JSON.stringify(json, null, 3))
-  })
+  }).catch((error) => {
+    console.log('Promise error', error);
+  });
   /*
    munichServices().then(json => {
    console.log(`got ${json.length} services`)
