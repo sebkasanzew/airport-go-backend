@@ -1,0 +1,14 @@
+{
+  "success": true,
+  "current": [{
+    "airportCode": "DEN",
+    "airportName": "Denver International Airport",
+    "queueId": "4dbe38e82f245f3ce8c347d6d29184df",
+    "queueName": "South General",
+    "projectedWaitTime": 960,
+    "projectedMinWaitMinutes": 14,
+    "projectedMaxWaitMinutes": 18,
+    "localTime": "2015-12-09T17:06:00.000-07:00",
+    "time": "2015-12-10T00:06:00.000Z"
+  }]
+}

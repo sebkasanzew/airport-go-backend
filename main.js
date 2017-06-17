@@ -1,5 +1,5 @@
 // let api =  require('./api/munich')
-const fs = require("fs")
+const fs = require('fs')
 const fetch = require('node-fetch')
 const _ = require('lodash')
 const express = require('express')
@@ -13,17 +13,17 @@ const headers = {
 const airport = 473 // Munich
 const params = {method: 'GET', headers, timeout: 0}
 
-function readJsonFileSync(filepath, encoding){
-  if (typeof (encoding) === 'undefined'){
-    encoding = 'utf8';
+function readJsonFileSync(filepath, encoding) {
+  if (typeof (encoding) === 'undefined') {
+    encoding = 'utf8'
   }
-  const file = fs.readFileSync(filepath, encoding);
-  return JSON.parse(file);
+  const file = fs.readFileSync(filepath, encoding)
+  return JSON.parse(file)
 }
 
-function getJSON(file){
-  const filepath = __dirname + '/' + file;
-  return readJsonFileSync(filepath);
+function getJSON(file) {
+  const filepath = __dirname + '/' + file
+  return readJsonFileSync(filepath)
 }
 
 let munichServices = (callback) => {
@@ -59,7 +59,7 @@ app.get('/services', function(req, res) {
 })
 
 app.get('/services/json', (req, res) => {
-  const json = getJSON('data/services.json');
+  const json = getJSON('data/services.json')
   res.setHeader('Content-Type', 'application/json')
   res.send(JSON.stringify(json, null, 3))
 })
@@ -138,54 +138,60 @@ app.get('/service-titles', (req, res) => {
 })
 
 app.get('/puzzles/public-area', (req, res) => {
-  const data = [
-    {
-      type: 'find'
-    },
-    {
-      type: 'quest'
-    },
-    {
-      type: 'question'
-    }
-  ]
+  const data = {
+    'public-area': [
+      {
+        type: 'find'
+      },
+      {
+        type: 'quest'
+      },
+      {
+        type: 'question'
+      }
+    ]
+  }
 
   res.setHeader('Content-Type', 'application/json')
   res.send(JSON.stringify(data, null, 3))
 })
 
 app.get('/puzzles/passenger-zone', (req, res) => {
-  const data = [
-    {
-      type: 'question',
-      description: ''
-    },
-    {
-      type: 'question',
-      description: ''
-    },
-    {
-      type: 'question',
-      description: ''
-    }
-  ]
+  const data = {
+    'passenger-zone': [
+      {
+        type: 'question',
+        description: ''
+      },
+      {
+        type: 'question',
+        description: ''
+      },
+      {
+        type: 'question',
+        description: ''
+      }
+    ]
+  }
 
   res.setHeader('Content-Type', 'application/json')
   res.send(JSON.stringify(data, null, 3))
 })
 
 app.get('/puzzles/security-check', (req, res) => {
-  const data = [
-    {
-      type: 'find'
-    },
-    {
-      type: 'quest'
-    },
-    {
-      type: 'question'
-    }
-  ]
+  const data = {
+    'security-check': [
+      {
+        type: 'find'
+      },
+      {
+        type: 'quest'
+      },
+      {
+        type: 'question'
+      }
+    ]
+  }
 
   res.setHeader('Content-Type', 'application/json')
   res.send(JSON.stringify(data, null, 3))
