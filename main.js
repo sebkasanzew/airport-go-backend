@@ -143,7 +143,7 @@ app.get('/puzzles/public-area', (req, res) => {
       {
         type: 'find',
         description: 'Go find this location at floor 2A',
-        image: 'https',
+        image: 'https://www-dev.passngr.de/images/square/low/49592.png',
         beaconID: 11982,
         // beaconID2: 42114
         points: 50
