@@ -1,0 +1,6 @@
+{
+  "start": "main.js",
+  "dependencies": {
+    "node-fetch": "^1.7.1"
+  }
+}
