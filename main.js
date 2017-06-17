@@ -141,13 +141,28 @@ app.get('/puzzles/public-area', (req, res) => {
   const data = {
     'publicArea': [
       {
-        type: 'find'
+        type: 'find',
+        description: 'Go find this location at floor 2A',
+        image: 'https',
+        beaconID: 11982,
+        // beaconID2: 42114
+        points: 50
       },
       {
-        type: 'quest'
+        type: 'quest',
+        description: 'Go get some coffee',
+        points: 30
       },
       {
-        type: 'question'
+        type: 'question',
+        description: 'How much fluids are allowed to carry in the hand luggage?',
+        correctAnswer: 1,
+        answers: [
+          {text: '2l'},
+          {text: '250ml'},
+          {text: '1l'}
+        ],
+        points: 10
       }
     ]
   }
