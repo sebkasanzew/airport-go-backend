@@ -78,7 +78,7 @@ app.get('/airport', (req, res) => {
   })
 })
 
-app.get('/flight', (req, res) => {
+app.get('/flight/arrivals', (req, res) => {
   fetch(
       `https://api-dev.munich-airport.de/aci-flight-v1/flight/${airport}/arrival`,
       params
@@ -92,9 +92,23 @@ app.get('/flight', (req, res) => {
   })
 })
 
+app.get('/flight/departures', (req, res) => {
+  fetch(
+      `https://api-dev.munich-airport.de/aci-flight-v1/flight/${airport}/departure`,
+      params
+  ).then(res => {
+    return res.json()
+  }).then(json => {
+    res.setHeader('Content-Type', 'application/json')
+    res.send(JSON.stringify(json, null, 3))
+  }).catch((error) => {
+    console.log('Promise error', error)
+  })
+})
+
 app.get('/airline', (req, res) => {
   fetch(
-      `https://api-dev.munich-airport.de/aci-airline-v1/search/${airport}`,
+      `https://api-dev.munich-airport.de/aci-airline-v1/airlines`,
       {method: 'GET', headers}
   ).then(res => {
     return res.json()
@@ -121,19 +135,60 @@ app.get('/service-titles', (req, res) => {
   }).catch((error) => {
     console.log('Promise error', error)
   })
-  /*
-   munichServices().then(json => {
-   console.log(`got ${json.length} services`)
-   json = _.map(json.services, 'title')
-   res.setHeader('Content-Type', 'application/json')
-   res.send(JSON.stringify(json, null, 3))
-   })
-   */
 })
 
-app.get('/puzzles', (req, res) => {
+app.get('/puzzles/public-area', (req, res) => {
+  const data = [
+    {
+      type: 'find'
+    },
+    {
+      type: 'quest'
+    },
+    {
+      type: 'question'
+    }
+  ]
+
   res.setHeader('Content-Type', 'application/json')
-  res.send(JSON.stringify({a: 1}, null, 3))
+  res.send(JSON.stringify(data, null, 3))
+})
+
+app.get('/puzzles/passenger-zone', (req, res) => {
+  const data = [
+    {
+      type: 'question',
+      description: ''
+    },
+    {
+      type: 'question',
+      description: ''
+    },
+    {
+      type: 'question',
+      description: ''
+    }
+  ]
+
+  res.setHeader('Content-Type', 'application/json')
+  res.send(JSON.stringify(data, null, 3))
+})
+
+app.get('/puzzles/security-check', (req, res) => {
+  const data = [
+    {
+      type: 'find'
+    },
+    {
+      type: 'quest'
+    },
+    {
+      type: 'question'
+    }
+  ]
+
+  res.setHeader('Content-Type', 'application/json')
+  res.send(JSON.stringify(data, null, 3))
 })
 
 app.listen(port, () => {
