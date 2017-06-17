@@ -154,18 +154,6 @@ app.get('/puzzles/public-area', (req, res) => {
         title: 'Do some stuff',
         description: 'Go get some coffee',
         points: 30
-      },
-      {
-        type: 'question',
-        title: 'Solve this quiz',
-        description: 'How much fluids are allowed to carry in the hand luggage?',
-        correctAnswer: 1,
-        answers: [
-          {text: '2l'},
-          {text: '250ml'},
-          {text: '1l'}
-        ],
-        points: 10
       }
     ]
   }
@@ -200,13 +188,25 @@ app.get('/puzzles/security-check', (req, res) => {
   const data = {
     'securityCheck': [
       {
-        type: 'find'
+        type: 'find',
+        title: 'Find the fastest security check line',
+        description: 'The fastest security check line at Terminal 2 is on level 4 and takes approximately 12 minutes.',
+        image: 'https://www-dev.passngr.de/images/square/low/49592.png',
+        beaconID: 42114,
+        // beaconID2: 11982
+        points: 20
       },
       {
-        type: 'quest'
-      },
-      {
-        type: 'question'
+        type: 'question',
+        title: 'Solve this quiz',
+        description: 'How much fluids are allowed to carry in the hand luggage?',
+        correctAnswer: 1,
+        answers: [
+          {text: '2l'},
+          {text: '250ml'},
+          {text: '1l'}
+        ],
+        points: 10
       }
     ]
   }
