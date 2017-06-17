@@ -142,6 +142,7 @@ app.get('/puzzles/public-area', (req, res) => {
     'publicArea': [
       {
         type: 'find',
+        title: 'Find this store',
         description: 'Go find this location at floor 2A',
         image: 'https://www-dev.passngr.de/images/square/low/49592.png',
         beaconID: 11982,
@@ -150,11 +151,13 @@ app.get('/puzzles/public-area', (req, res) => {
       },
       {
         type: 'quest',
+        title: 'Do some stuff',
         description: 'Go get some coffee',
         points: 30
       },
       {
         type: 'question',
+        title: 'Solve this quiz',
         description: 'How much fluids are allowed to carry in the hand luggage?',
         correctAnswer: 1,
         answers: [
