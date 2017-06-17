@@ -1,5 +1,5 @@
 // let api =  require('./api/munich')
-
+const fs = require("fs")
 const fetch = require('node-fetch')
 const _ = require('lodash')
 const express = require('express')
@@ -13,6 +13,19 @@ const headers = {
 const airport = 473 // Munich
 const params = {method: 'GET', headers, timeout: 0}
 
+function readJsonFileSync(filepath, encoding){
+  if (typeof (encoding) === 'undefined'){
+    encoding = 'utf8';
+  }
+  const file = fs.readFileSync(filepath, encoding);
+  return JSON.parse(file);
+}
+
+function getJSON(file){
+  const filepath = __dirname + '/' + file;
+  return readJsonFileSync(filepath);
+}
+
 let munichServices = (callback) => {
   const queryParam = 'searchString=' // + '&length=10'
 
@@ -25,8 +38,8 @@ let munichServices = (callback) => {
     res.setHeader('Content-Type', 'application/json')
     res.send(JSON.stringify(json, null, 3))
   }).catch((error) => {
-    console.log('Promise error', error);
-  });
+    console.log('Promise error', error)
+  })
 }
 
 app.get('/services', function(req, res) {
@@ -41,8 +54,14 @@ app.get('/services', function(req, res) {
     res.setHeader('Content-Type', 'application/json')
     res.send(JSON.stringify(json, null, 3))
   }).catch((error) => {
-    console.log('Promise error', error);
-  });
+    console.log('Promise error', error)
+  })
+})
+
+app.get('/services/json', (req, res) => {
+  const json = getJSON('data/services.json');
+  res.setHeader('Content-Type', 'application/json')
+  res.send(JSON.stringify(json, null, 3))
 })
 
 app.get('/airport', (req, res) => {
@@ -55,8 +74,8 @@ app.get('/airport', (req, res) => {
     res.setHeader('Content-Type', 'application/json')
     res.send(JSON.stringify(json, null, 3))
   }).catch((error) => {
-    console.log('Promise error', error);
-  });
+    console.log('Promise error', error)
+  })
 })
 
 app.get('/flight', (req, res) => {
@@ -69,8 +88,8 @@ app.get('/flight', (req, res) => {
     res.setHeader('Content-Type', 'application/json')
     res.send(JSON.stringify(json, null, 3))
   }).catch((error) => {
-    console.log('Promise error', error);
-  });
+    console.log('Promise error', error)
+  })
 })
 
 app.get('/airline', (req, res) => {
@@ -83,8 +102,8 @@ app.get('/airline', (req, res) => {
     res.setHeader('Content-Type', 'application/json')
     res.send(JSON.stringify(json, null, 3))
   }).catch((error) => {
-    console.log('Promise error', error);
-  });
+    console.log('Promise error', error)
+  })
 })
 
 app.get('/service-titles', (req, res) => {
@@ -100,8 +119,8 @@ app.get('/service-titles', (req, res) => {
     res.setHeader('Content-Type', 'application/json')
     res.send(JSON.stringify(json, null, 3))
   }).catch((error) => {
-    console.log('Promise error', error);
-  });
+    console.log('Promise error', error)
+  })
   /*
    munichServices().then(json => {
    console.log(`got ${json.length} services`)
