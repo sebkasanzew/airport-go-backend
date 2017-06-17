@@ -11,13 +11,14 @@ const headers = {
   'X-apiKey': 'd017a45398ba4a8e14b7fe534fb9b54a'
 }
 const airport = 473 // Munich
+const params = {method: 'GET', headers, timeout: 0}
 
 let munichServices = (callback) => {
   const queryParam = 'searchString=' // + '&length=10'
 
   fetch(
       `https://api-dev.munich-airport.de/aci-service-v1/search/${airport}?${queryParam}`,
-      {method: 'GET', headers}
+      params
   ).then(res => {
     return res.json()
   }).then(json => {
@@ -31,7 +32,7 @@ app.get('/services', function(req, res) {
 
   fetch(
       `https://api-dev.munich-airport.de/aci-service-v1/search/${airport}?${queryParam}`,
-      {method: 'GET', headers}
+      params
   ).then(res => {
     return res.json()
   }).then(json => {
@@ -43,7 +44,7 @@ app.get('/services', function(req, res) {
 app.get('/airport', (req, res) => {
   fetch(
       `https://api-dev.munich-airport.de/aci-airport-v1/detail/${airport}`,
-      {method: 'GET', headers}
+      params
   ).then(res => {
     return res.json()
   }).then(json => {
@@ -55,7 +56,7 @@ app.get('/airport', (req, res) => {
 app.get('/flight', (req, res) => {
   fetch(
       `https://api-dev.munich-airport.de/aci-flight-v1/flight/${airport}/arrival`,
-      {method: 'GET', headers}
+      params
   ).then(res => {
     return res.json()
   }).then(json => {
@@ -81,7 +82,7 @@ app.get('/service-titles', (req, res) => {
 
   fetch(
       `https://api-dev.munich-airport.de/aci-service-v1/search/${airport}?${queryParam}`,
-      {method: 'GET', headers}
+      {method: 'GET', headers, timeout: 0}
   ).then(res => {
     return res.json()
   }).then(json => {
@@ -90,13 +91,13 @@ app.get('/service-titles', (req, res) => {
     res.send(JSON.stringify(json, null, 3))
   })
   /*
-  munichServices().then(json => {
-    console.log(`got ${json.length} services`)
-    json = _.map(json.services, 'title')
-    res.setHeader('Content-Type', 'application/json')
-    res.send(JSON.stringify(json, null, 3))
-  })
-  */
+   munichServices().then(json => {
+   console.log(`got ${json.length} services`)
+   json = _.map(json.services, 'title')
+   res.setHeader('Content-Type', 'application/json')
+   res.send(JSON.stringify(json, null, 3))
+   })
+   */
 })
 
 app.get('/puzzles', (req, res) => {
