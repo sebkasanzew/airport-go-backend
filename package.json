@@ -1,6 +1,17 @@
 {
+  "name": "airport-go-backend",
+  "description": "The backend for airport-go",
+  "version": "0.1.0",
+  "engines": {
+    "node": "6.11.0"
+  },
+  "scripts": {
+    "start": "node main.js",
+    "test": "mocha"
+  },
   "start": "main.js",
   "dependencies": {
+    "express": "^4.15.3",
     "node-fetch": "^1.7.1"
   }
 }
