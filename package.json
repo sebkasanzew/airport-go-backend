@@ -12,6 +12,7 @@
   "main": "main.js",
   "dependencies": {
     "express": "^4.15.3",
+    "lodash": "^4.17.4",
     "node-fetch": "^1.7.1"
   }
 }
