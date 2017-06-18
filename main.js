@@ -208,7 +208,7 @@ app.get('/puzzles/security-check', (req, res) => {
         type: 'find',
         title: 'Find the fastest lane',
         description: 'The fastest security check line at Terminal 2 is on level 4 and takes approximately 12 minutes.',
-        image: 'https://www-dev.passngr.de/images/square/low/49592.png',
+        image: '59592',
         beaconID: 42114,
         // beaconID2: 11982
         points: 20
