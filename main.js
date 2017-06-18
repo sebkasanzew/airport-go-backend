@@ -146,6 +146,9 @@ app.get('/puzzles/public-area', (req, res) => {
         description: 'Go find this location at floor 2A',
         image: 'https://www-dev.passngr.de/images/square/low/49592.png',
         beaconID: 11982,
+        rewardTitle: "Accessorize",
+        rewardText: "The trendy British label Accessorize stands for affordable quality, and empowers women to create their own individual style with well-made and fashionable accessories. The brand was born in 1984 with the opening of its first shop in London's Covent Garden, a one-stop destination for the on-trend finishing touches that complete every great fashion look. Today Accessorize shops have an international presence – including at Munich Airport. It's the perfect place to shop for high-quality accessories with a unique identity.",
+        rewardOpeningHours: "daily 7:30 a.m. -  9:00 p.m.",
         // beaconID2: 42114
         points: 50
       },
@@ -153,6 +156,9 @@ app.get('/puzzles/public-area', (req, res) => {
         type: 'quest',
         title: 'Do some stuff',
         description: 'Go get some coffee',
+        rewardTitle: 'AIRPORTphysio',
+        rewardText: "Physiotherapy practice in Munich Airport Center",
+        rewardOpeningHours: "daily 7:00 a.m. - 10:00 p.m.",
         points: 30
       }
     ]
