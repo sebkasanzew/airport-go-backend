@@ -142,24 +142,25 @@ app.get('/puzzles/public-area', (req, res) => {
     'publicArea': [
       {
         type: 'find',
-        title: 'Find this store',
-        description: 'Go find this location at floor 2A',
-        image: 'https://www-dev.passngr.de/images/square/low/49592.png',
-        beaconID: 11982,
-        rewardTitle: "Accessorize",
-        rewardText: "The trendy British label Accessorize stands for affordable quality, and empowers women to create their own individual style with well-made and fashionable accessories. The brand was born in 1984 with the opening of its first shop in London's Covent Garden, a one-stop destination for the on-trend finishing touches that complete every great fashion look. Today Accessorize shops have an international presence – including at Munich Airport. It's the perfect place to shop for high-quality accessories with a unique identity.",
+        title: 'Find Hunkemöller',
+        description: 'Go find this location at Terminal 2 -  Level 03 - Arrival, ',
+        image: 'https://www-dev.passngr.de/images/fullScreen/low/49523.png',
+        beaconID: 11982, // beaconID2: 42114
+        rewardTitle: "Hunkemöller",
+        rewardText: "Hunkemöller is one of Europe's top lingerie brands and is the market leader in Germany and the Benelux countries. You'll find fashionable lingerie, undergarments, sleepwear, sports apparel and swimwear. From clothing to enhance everyday life to lingerie for special occasions and very special moments – all products reflect the Hunkemöller philosophy of outstanding quality at affordable prices. The brand takes pride in offering the latest styles and a perfect fit.",
         rewardOpeningHours: "daily 7:30 a.m. -  9:00 p.m.",
-        // beaconID2: 42114
-        points: 50
+        points: 40
       },
       {
-        type: 'quest',
-        title: 'Do some stuff',
-        description: 'Go get some coffee',
-        rewardTitle: 'AIRPORTphysio',
-        rewardText: "Physiotherapy practice in Munich Airport Center",
-        rewardOpeningHours: "daily 7:00 a.m. - 10:00 p.m.",
-        points: 30
+        type: 'find',
+        title: 'Find Starbucks',
+        description: 'Go find this location at Terminal 2 -  Level 03 - Arrival',
+        image: 'https://www-dev.passngr.de/images/fullScreen/low/50227.png',
+        beaconID: 42114, // beaconID2: 42114
+        rewardTitle: "Starbucks",
+        rewardText: "At Starbucks in Terminal 2, Level 03, you can enjoy your coffee just the way you like it, from an iced cappuccino to traditional coffee and cake – it's entirely up to you. Regulars love the friendly service and the inviting atmosphere at Starbucks. And there's much more to discover than the perfectly brewed coffees: Starbucks offers a selection of high-quality teas, excellent baked goods and other treats. Enjoy your stay!",
+        rewardOpeningHours: "daily 7:30 a.m. -  9:00 p.m.",
+        points: 40
       }
     ]
   }
@@ -172,16 +173,26 @@ app.get('/puzzles/passenger-zone', (req, res) => {
   const data = {
     'passengerZone': [
       {
-        type: 'question',
-        description: ''
+        type: 'find',
+        title: 'Find Bistro Organic',
+        description: 'Go find this location at Terminal 2 - Level 04 - Departure, Gate G',
+        image: 'https://www-dev.passngr.de/images/square/low/49592.png',
+        beaconID: 11982, // beaconID2: 42114
+        rewardTitle: "Bistro Organic",
+        rewardText: "From prosecco and lassi to snacks, coffee and cake: true to its name, Bistro Organic serves exclusively 100% organic ingredients to its guests.  The fresh fruit and salad corner also provides light and healthy alternatives to fast food. Rounding off the menu at this trendy organic eatery are freshly squeezed juices and a selection of regional beers.",
+        rewardOpeningHours: "daily 5:00 a.m. - 10:00 p.m.",
+        points: 50
       },
       {
-        type: 'question',
-        description: ''
-      },
-      {
-        type: 'question',
-        description: ''
+        type: 'find',
+        title: 'Find Bluebird Bar',
+        description: 'Go find this location at Terminal 2 - Level 05 -  Departure, Gate H',
+        image: 'https://www-dev.passngr.de/images/fullScreen/low/49581.png',
+        beaconID: 42114, // beaconID2: 11982
+        rewardTitle: "Bluebird Bar",
+        rewardText: "At the Bluebird Bar tasty items are available \"to go\" starting in the early morning hours – always good to know when you miss breakfast at home. You can pick up sandwiches, snacks and baked goods for the perfect start to your morning. Also on the menu are hearty Bavarian sausages, thin-crust Italian pizza, fine pasta, shakes and ice cream.",
+        rewardOpeningHours: "daily 7:00 - ZUM LETZTEN FLUG",
+        points: 50
       }
     ]
   }
