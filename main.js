@@ -241,7 +241,7 @@ app.get('/puzzles/security-check', (req, res) => {
         type: 'question',
         title: 'Solve this quiz',
         description: 'How much fluids are allowed to carry in the hand luggage?',
-        correctAnswer: 1,
+        correctAnswer: 2,
         answers: [
           {text: '2 l'},
           {text: '250 ml'},
