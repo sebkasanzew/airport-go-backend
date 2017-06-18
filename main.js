@@ -144,7 +144,7 @@ app.get('/puzzles/public-area', (req, res) => {
         type: 'find',
         title: 'Find Hunkemöller',
         description: 'Go find this location at Terminal 2 -  Level 03 - Arrival, ',
-        image: 'https://www-dev.passngr.de/images/fullScreen/low/49523.png',
+        image: '49523.png',
         beaconID: 11982, // beaconID2: 42114
         rewardTitle: "Hunkemöller",
         rewardText: "Hunkemöller is one of Europe's top lingerie brands and is the market leader in Germany and the Benelux countries. You'll find fashionable lingerie, undergarments, sleepwear, sports apparel and swimwear. From clothing to enhance everyday life to lingerie for special occasions and very special moments – all products reflect the Hunkemöller philosophy of outstanding quality at affordable prices. The brand takes pride in offering the latest styles and a perfect fit.",
@@ -155,7 +155,7 @@ app.get('/puzzles/public-area', (req, res) => {
         type: 'find',
         title: 'Find Starbucks',
         description: 'Go find this location at Terminal 2 -  Level 03 - Arrival',
-        image: 'https://www-dev.passngr.de/images/fullScreen/low/50227.png',
+        image: '50227.png',
         beaconID: 42114, // beaconID2: 42114
         rewardTitle: "Starbucks",
         rewardText: "At Starbucks in Terminal 2, Level 03, you can enjoy your coffee just the way you like it, from an iced cappuccino to traditional coffee and cake – it's entirely up to you. Regulars love the friendly service and the inviting atmosphere at Starbucks. And there's much more to discover than the perfectly brewed coffees: Starbucks offers a selection of high-quality teas, excellent baked goods and other treats. Enjoy your stay!",
@@ -176,7 +176,7 @@ app.get('/puzzles/passenger-zone', (req, res) => {
         type: 'find',
         title: 'Find Bistro Organic',
         description: 'Go find this location at Terminal 2 - Level 04 - Departure, Gate G',
-        image: 'https://www-dev.passngr.de/images/square/low/49592.png',
+        image: '49592.png',
         beaconID: 11982, // beaconID2: 42114
         rewardTitle: "Bistro Organic",
         rewardText: "From prosecco and lassi to snacks, coffee and cake: true to its name, Bistro Organic serves exclusively 100% organic ingredients to its guests.  The fresh fruit and salad corner also provides light and healthy alternatives to fast food. Rounding off the menu at this trendy organic eatery are freshly squeezed juices and a selection of regional beers.",
@@ -187,7 +187,7 @@ app.get('/puzzles/passenger-zone', (req, res) => {
         type: 'find',
         title: 'Find Bluebird Bar',
         description: 'Go find this location at Terminal 2 - Level 05 -  Departure, Gate H',
-        image: 'https://www-dev.passngr.de/images/fullScreen/low/49581.png',
+        image: '49581.png',
         beaconID: 42114, // beaconID2: 11982
         rewardTitle: "Bluebird Bar",
         rewardText: "At the Bluebird Bar tasty items are available \"to go\" starting in the early morning hours – always good to know when you miss breakfast at home. You can pick up sandwiches, snacks and baked goods for the perfect start to your morning. Also on the menu are hearty Bavarian sausages, thin-crust Italian pizza, fine pasta, shakes and ice cream.",
