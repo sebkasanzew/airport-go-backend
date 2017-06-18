@@ -161,6 +161,18 @@ app.get('/puzzles/public-area', (req, res) => {
         rewardText: "At Starbucks in Terminal 2, Level 03, you can enjoy your coffee just the way you like it, from an iced cappuccino to traditional coffee and cake – it's entirely up to you. Regulars love the friendly service and the inviting atmosphere at Starbucks. And there's much more to discover than the perfectly brewed coffees: Starbucks offers a selection of high-quality teas, excellent baked goods and other treats. Enjoy your stay!",
         rewardOpeningHours: "daily 7:30 a.m. -  9:00 p.m.",
         points: 40
+      },
+      {
+        type: 'question',
+        title: 'Solve this problem',
+        description: '2 - 2',
+        correctAnswer: 2,
+        answers: [
+          {text: '1'},
+          {text: '3'},
+          {text: '0'}
+        ],
+        points: 5
       }
     ]
   }
@@ -193,6 +205,18 @@ app.get('/puzzles/passenger-zone', (req, res) => {
         rewardText: "At the Bluebird Bar tasty items are available \"to go\" starting in the early morning hours – always good to know when you miss breakfast at home. You can pick up sandwiches, snacks and baked goods for the perfect start to your morning. Also on the menu are hearty Bavarian sausages, thin-crust Italian pizza, fine pasta, shakes and ice cream.",
         rewardOpeningHours: "daily 7:00 - ZUM LETZTEN FLUG",
         points: 50
+      },
+      {
+        type: 'question',
+        title: 'Solve this problem',
+        description: '2 * 2',
+        correctAnswer: 0,
+        answers: [
+          {text: '4'},
+          {text: '5'},
+          {text: '1'}
+        ],
+        points: 5
       }
     ]
   }
@@ -219,11 +243,23 @@ app.get('/puzzles/security-check', (req, res) => {
         description: 'How much fluids are allowed to carry in the hand luggage?',
         correctAnswer: 1,
         answers: [
-          {text: '2l'},
-          {text: '250ml'},
-          {text: '1l'}
+          {text: '2 l'},
+          {text: '250 ml'},
+          {text: '1 l'}
         ],
         points: 10
+      },
+      {
+        type: 'question',
+        title: 'Solve this problem',
+        description: '2 + 2',
+        correctAnswer: 0,
+        answers: [
+          {text: '4'},
+          {text: '5'},
+          {text: '1'}
+        ],
+        points: 5
       }
     ]
   }
